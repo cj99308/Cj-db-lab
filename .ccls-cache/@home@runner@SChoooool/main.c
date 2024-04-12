@@ -1,0 +1,21 @@
+Create database VideoGame_Highschool;
+use VideoGame_Highschool;
+create table Students (StudentID int primary key, Name varchar(255),Grade int); 
+create table Courses (CourseID int primary key, CourseName varchar(255), Instructor varchar(255));
+create table Enrollments (EnrollmentID int primary key, StudentID int, CourseID int, Foreign key (StudentID) references Students(StudentID), Foreign key (CourseID) references Courses(CourseID));
+select * from Students;
+Show columns from Students; 
+insert into Students values (201, 'Kaleb White', 9);
+insert into Students values (301, 'Candace Yang' 10);
+insert into Students values (401, 'Felip Bar'11);
+show columns from Courses;
+insert into Courses values (101, 'Game Theory', 'Cj Goss');
+insert into Courses values (202, 'Peripherals', 'Caleb Korn');
+insert into Courses values (303, 'Study Hall', 'John Lewis');
+select * from Courses;
+show columns from Enrollments;
+insert into Enrollments values (777, 201, 101); 
+insert into Enrollments values (888, 301, 202);
+insert into Enrollments values (999, 401, 303);
+select * from Enrollments; 
+  
